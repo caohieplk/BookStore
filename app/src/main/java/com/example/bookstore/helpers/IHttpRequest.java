@@ -5,6 +5,7 @@ import com.example.bookstore.dto.*;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 
@@ -15,5 +16,8 @@ public interface IHttpRequest {
 
     @POST("/api/Login.php")
     Call<LoginResponseDTO> login (@Body LoginRequestDTO body );
+
+    @GET("/api/Get_all_notification.php")
+    Call<ListNotificationResponeDTO> getNotification();
 
 }

@@ -1,60 +1,83 @@
 package com.example.bookstore.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bookstore.R;
+import com.example.bookstore.adapter.NotificationAdapter;
+import com.example.bookstore.databinding.FragmentNotificationBinding;
+import com.example.bookstore.dto.ListNotificationResponeDTO;
+import com.example.bookstore.dto.NotificationResponeDTO;
+import com.example.bookstore.helpers.HttpRequest;
+import com.example.bookstore.helpers.IHttpRequest;
+import com.example.bookstore.model.Notification;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class NotificationFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    FragmentNotificationBinding binding;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public NotificationFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment NotificationFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static NotificationFragment newInstance(String param1, String param2) {
-        NotificationFragment fragment = new NotificationFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    IHttpRequest iHttpRequest;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
+
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.fragment_notification, container, false);
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notification, container, false);
+
+        binding = FragmentNotificationBinding.inflate(inflater,container,false);
+        iHttpRequest = HttpRequest.createService(IHttpRequest.class);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        binding.listNotification.setLayoutManager(linearLayoutManager);
+        iHttpRequest.getNotification().enqueue(getNotifiCallback);
+
+        return binding.getRoot();
     }
+
+    Callback<ListNotificationResponeDTO> getNotifiCallback = new Callback<ListNotificationResponeDTO>() {
+        @Override
+        public void onResponse(Call<ListNotificationResponeDTO> call, Response<ListNotificationResponeDTO> response) {
+            if(response.isSuccessful()){
+                ListNotificationResponeDTO responeDTO = response.body();
+                if(responeDTO.isStatus()){
+                    List<NotificationResponeDTO> notifi = responeDTO.getData();
+                    NotificationAdapter adapter = new NotificationAdapter(notifi);
+                    binding.listNotification.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        }
+
+        @Override
+        public void onFailure(Call<ListNotificationResponeDTO> call, Throwable t) {
+            Log.d("login","Failute" + t.getMessage());
+        }
+    };
+
+
 }

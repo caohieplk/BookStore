@@ -6,21 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.bookstore.R;
-import com.example.bookstore.adapter.ViewPagerAdapter;
-import com.example.bookstore.databinding.FragmentSchedulesBinding;
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
-public class SchedulesFragment extends Fragment {
-
-
-    TabLayout tabLayout;
-    ViewPager2 viewPager2;
-    View view;
-    FragmentSchedulesBinding binding;
+public class SchedulesTab3Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,9 +20,6 @@ public class SchedulesFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SchedulesFragment() {
-        // Required empty public constructor
-    }
 
     /**
      * Use this factory method to create a new instance of
@@ -41,11 +27,11 @@ public class SchedulesFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SchedulesFragment.
+     * @return A new instance of fragment HomeFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SchedulesFragment newInstance(String param1, String param2) {
-        SchedulesFragment fragment = new SchedulesFragment();
+    public static HomeFragment newInstance(String param1, String param2) {
+        HomeFragment fragment = new HomeFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -66,29 +52,6 @@ public class SchedulesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_schedules, container, false);
-        binding = FragmentSchedulesBinding.inflate(inflater,container,false);
-
-
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
-        binding.vpSchedules.setAdapter(viewPagerAdapter);
-
-        new TabLayoutMediator(binding.tlSchedules, binding.vpSchedules, (tab, position) -> {
-            switch (position){
-                case 0:
-                    tab.setText("Thiếu Nhi");
-                    break;
-                case 1:
-                    tab.setText("Trinh Thám");
-                    break;
-                case 2:
-                    tab.setText("Tài Chính");
-                    break;
-            }
-        }).attach();
-
-        return binding.getRoot();
+        return inflater.inflate(R.layout.fragment_schedules_tab_3, container, false);
     }
-
-
 }
