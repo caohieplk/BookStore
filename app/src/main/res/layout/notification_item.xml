@@ -53,6 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/dollar1"
+            android:drawable="@drawable/dollar1"
             android:scaleType="center"
             android:text="20.000"
             android:textSize="18dp"
@@ -78,7 +79,7 @@
            android:background="@drawable/rectangle1"
            android:gravity="center"
            android:layout_marginStart="18dp"
-           android:text="Mua"/>
+           android:text="Mở Khóa"/>
         <TextView
             android:id="@+id/tv_day"
             android:layout_width="match_parent"
@@ -90,6 +91,8 @@
             android:layout_marginStart="18dp"
             android:textColor="@color/black"
             android:textSize="18dp" />
+
+
     </LinearLayout>
 
 </LinearLayout>
