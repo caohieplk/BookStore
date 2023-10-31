@@ -7,13 +7,14 @@
     tools:context=".LoginActivity"
     android:background="@drawable/gradient">
 
+
     <EditText
         android:id="@+id/edtEmail"
         android:layout_width="330dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/background_edtlogin"
-        android:backgroundTint="#F4E2E2"
+        android:backgroundTint="#CFCECE"
         android:ems="10"
         android:hint="User Name (*)"
         android:inputType="textEmailAddress"
@@ -42,7 +43,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/background_edtlogin"
         android:ems="10"
-        android:backgroundTint="#F4E2E2"
+        android:backgroundTint="#CFCECE"
         android:hint="Password (*)"
         android:inputType="textPassword"
         android:paddingStart="20dp"

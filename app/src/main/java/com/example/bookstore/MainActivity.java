@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import com.example.bookstore.databinding.ActivityMainBinding;
 import com.example.bookstore.fragment.ExtendedFragment;
 import com.example.bookstore.fragment.HomeFragment;
+import com.example.bookstore.fragment.HomesFragment;
 import com.example.bookstore.fragment.NotificationFragment;
 import com.example.bookstore.fragment.SchedulesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

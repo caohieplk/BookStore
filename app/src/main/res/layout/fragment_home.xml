@@ -1,15 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".fragment.HomeFragment"
-    android:background="@color/mid1_color">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is home fragment" />
 
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="130dp"
+            android:layout_below="@+id/txtUser"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/image15" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="290dp"
+            android:text="Sách truyện"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/imgSachTruyen"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="240dp"
+            android:background="@drawable/image16" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="290dp"
+            android:text="Sách Nói"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/imgSachNoi"
+            android:layout_width="65dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="240dp"
+            android:background="@drawable/image17" />
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="290dp"
+            android:text="Truyện Tranh"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/imgTruyenTranh"
+            android:layout_width="60dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="240dp"
+            android:background="@drawable/image18" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="290dp"
+            android:text="Sách phật giáo"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/imgSachPhatGiao"
+            android:layout_width="60dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="240dp"
+            android:background="@drawable/image19" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="370dp"
+            android:text="Sách mới nhất"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/imgSachMoiNhat"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="320dp"
+            android:background="@drawable/image20" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="370dp"
+            android:text="Sách chính trị"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/imgSachChinhTri"
+            android:layout_width="65dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="320dp"
+            android:background="@drawable/image22" />
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="215dp"
+            android:layout_marginTop="370dp"
+            android:text="Hộp thư"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/imgHopThu"
+            android:layout_width="60dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="320dp"
+            android:background="@drawable/image23" />
+
+        <TextView
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="370dp"
+            android:text="Sách công giáo"
+            android:textSize="15dp" />
+
+        <ImageView
+            android:id="@+id/imgSachCongGiao"
+            android:layout_width="60dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="320dp"
+            android:background="@drawable/image211" />
+
+        <LinearLayout
+            android:id="@+id/txtUser"
+            android:layout_width="280dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+
+            <EditText
+                android:id="@+id/edtUser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/background_edtlogin"
+                android:backgroundTint="#CFCECE"
+                android:drawableRight="@drawable/ic_baseline_keyboard_voice_24"
+                android:gravity="center"
+                android:hint="Nhập từ khóa tìm kiếm"
+                android:paddingEnd="20dp"
+                android:scaleType="center"
+
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/txtSach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/imgSachCongGiao"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Sách mới nhất"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:textSize="26dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recysachmoi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:orientation="horizontal" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/txtpodcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtSach"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="PodCast"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:textSize="26dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recypodcast"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/txtSachMienPhi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtpodcast"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Sách miễn phí"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:textSize="26dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recysachmienphi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:orientation="horizontal" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/txtSachMienPhi"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Bảng xếp hạng"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:textSize="26dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recybxh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+</ScrollView>
