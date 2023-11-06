@@ -16,7 +16,7 @@
         android:title="Endow" />
     <item
         android:id="@+id/none"
-        android:icon="@drawable/user"
+        android:icon="@drawable/user3"
         android:title="Profile" />
 
 </menu>
