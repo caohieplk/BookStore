@@ -7,13 +7,13 @@ public class ListNotificationResponeDTO {
     private String message;
     private List<NotificationResponeDTO> data;
 
+    public ListNotificationResponeDTO() {
+    }
+
     public ListNotificationResponeDTO(boolean status, String message, List<NotificationResponeDTO> data) {
         this.status = status;
         this.message = message;
         this.data = data;
-    }
-
-    public ListNotificationResponeDTO() {
     }
 
     public boolean isStatus() {

@@ -2,16 +2,17 @@ package com.example.bookstore.dto;
 
 public class NotificationResponeDTO {
     private int id;
-    private String name ,price1 ,price2,day;
+    private String name ,price1 ,price2,image,day;
 
     public NotificationResponeDTO() {
     }
 
-    public NotificationResponeDTO(int id, String name, String price1, String price2, String day) {
+    public NotificationResponeDTO(int id, String name, String price1, String price2, String image, String day) {
         this.id = id;
         this.name = name;
         this.price1 = price1;
         this.price2 = price2;
+        this.image = image;
         this.day = day;
     }
 
@@ -45,6 +46,14 @@ public class NotificationResponeDTO {
 
     public void setPrice2(String price2) {
         this.price2 = price2;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getDay() {

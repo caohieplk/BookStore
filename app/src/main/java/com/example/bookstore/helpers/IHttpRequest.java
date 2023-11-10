@@ -17,7 +17,13 @@ public interface IHttpRequest {
     @POST("/api/Login.php")
     Call<LoginResponseDTO> login (@Body LoginRequestDTO body );
 
-    @GET("/api/Get_all_notification.php")
+//    @GET("/api/Get_all_notification.php")
+//    Call<ListNotificationResponeDTO> getNotification();
+
+    @GET("/api/Get_all_thongbao_new.php")
     Call<ListNotificationResponeDTO> getNotification();
+
+    @GET("/api/Get_all_thongbao_new.php")
+    Call<ListThongbaoResponeDTO> getThongBao();
 
 }
