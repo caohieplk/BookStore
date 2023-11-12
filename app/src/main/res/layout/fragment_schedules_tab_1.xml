@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     tools:context=".fragment.SchedulesTab1Fragment"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/purple_200">
+    android:background="@color/purple_500">
 
     <TextView
         android:id="@+id/rv_schedules_tab1"
