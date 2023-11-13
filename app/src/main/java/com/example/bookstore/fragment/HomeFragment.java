@@ -1,61 +1,78 @@
 package com.example.bookstore.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bookstore.R;
+import com.example.bookstore.adapter.NotificationAdapter;
+import com.example.bookstore.adapter.ThongbaoAdapter;
+import com.example.bookstore.databinding.FragmentHomeBinding;
+import com.example.bookstore.databinding.FragmentNotificationBinding;
+import com.example.bookstore.dto.ListNotificationResponeDTO;
+import com.example.bookstore.dto.ListThongbaoResponeDTO;
+import com.example.bookstore.dto.NotificationResponeDTO;
+import com.example.bookstore.dto.ThongbaoResponseDTO;
+import com.example.bookstore.helpers.HttpRequest;
+import com.example.bookstore.helpers.IHttpRequest;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    FragmentHomeBinding binding;
+    IHttpRequest iHttpRequest;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public HomeFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment HomeFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static HomeFragment newInstance(String param1, String param2) {
-        HomeFragment fragment = new HomeFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+
+        binding = FragmentHomeBinding.inflate(inflater,container,false);
+        iHttpRequest = HttpRequest.createService(IHttpRequest.class);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        binding.listThongBao.setLayoutManager(linearLayoutManager);
+        iHttpRequest.getThongBao().enqueue(getThongBaoCallback);
+
+        return binding.getRoot();
     }
+
+
+    Callback<ListThongbaoResponeDTO> getThongBaoCallback = new Callback<ListThongbaoResponeDTO>() {
+        @Override
+        public void onResponse(Call<ListThongbaoResponeDTO> call, Response<ListThongbaoResponeDTO> response) {
+            if(response.isSuccessful()){
+                ListThongbaoResponeDTO responeDTO = response.body();
+                if(responeDTO.isStatus()){
+                    List<ThongbaoResponseDTO> thongbao = responeDTO.getData();
+                    ThongbaoAdapter adapter = new ThongbaoAdapter(thongbao);
+                    binding.listThongBao.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        }
+
+        @Override
+        public void onFailure(Call<ListThongbaoResponeDTO> call, Throwable t) {
+            Log.d("login","Failute" + t.getMessage());
+        }
+    };
 
 }
