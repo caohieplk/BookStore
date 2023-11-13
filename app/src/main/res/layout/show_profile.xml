@@ -26,8 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp"
-        tools:layout_editor_absoluteX="19dp"
-        tools:layout_editor_absoluteY="292dp">
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="166dp">
 
         <ImageView
             android:id="@+id/ivProfileImage"
@@ -85,6 +85,7 @@
             android:id="@+id/etEducation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="388dp"
             android:backgroundTint="#00BCD4"
             android:fontFamily="sans-serif"
             android:hint="Education"
@@ -93,43 +94,48 @@
             android:textColor="#333333"
             android:textColorHint="#666666"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="28dp"
-            tools:layout_editor_absoluteY="158dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="5dp" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etHobbies"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="172dp"
             android:hint="Nam"
+            android:text="Nam"
             android:textColorHint="#666666"
             android:textSize="18sp"
-            android:text="Nam"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="219dp" />
+
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="5dp" />
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etHobbies"
+            android:id="@+id/etHobbis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="272dp"
             android:hint="Nam"
             android:text="23/6/2003"
+
             android:textColorHint="#666666"
             android:textSize="18sp"
-            tools:layout_editor_absoluteX="25dp"
-            tools:layout_editor_absoluteY="292dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
 
         <Button
             android:id="@+id/myButton"
             android:layout_width="0dp"
             android:layout_height="60dp"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
             android:backgroundTint="#00BCD4"
             android:text="Lưu thông tin"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.156"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tilHobbies" />
 
