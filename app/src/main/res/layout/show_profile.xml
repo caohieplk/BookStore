@@ -85,7 +85,7 @@
             android:id="@+id/etEducation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="388dp"
+            android:layout_marginTop="316dp"
             android:backgroundTint="#00BCD4"
             android:fontFamily="sans-serif"
             android:hint="Education"
@@ -95,7 +95,7 @@
             android:textColorHint="#666666"
             android:textSize="18sp"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="5dp" />
+            tools:layout_editor_absoluteX="16dp" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etHobbies"
@@ -114,7 +114,7 @@
             android:id="@+id/etHobbis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="272dp"
+            android:layout_marginTop="248dp"
             android:hint="Nam"
             android:text="23/6/2003"
 
