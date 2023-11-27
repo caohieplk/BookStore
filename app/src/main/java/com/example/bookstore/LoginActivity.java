@@ -1,7 +1,5 @@
 package com.example.bookstore;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +13,7 @@ import com.example.bookstore.dto.LoginResponseDTO;
 import com.example.bookstore.helpers.HttpRequest;
 import com.example.bookstore.helpers.IHttpRequest;
 
+import androidx.appcompat.app.AppCompatActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -36,6 +35,8 @@ public class LoginActivity extends AppCompatActivity {
         edtPassword = findViewById(R.id.edtPassword);
         btnLogin = findViewById(R.id.btnLogin);
         iHttpRequest = HttpRequest.createService(IHttpRequest.class);
+        edtEmail.setText("t@gmail.com");
+        edtPassword.setText("1");
     }
 
     public void onLoginClick(View view)

@@ -2,4 +2,6 @@
     <string name="app_name">BookStore</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="book_price_format">%s ₫</string>
+    <string name="txt_there_are_no_items_to_show">Không tìm thấy kết quả</string>
 </resources>
