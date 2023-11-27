@@ -45,7 +45,4 @@ public interface IHttpRequest {
     @GET("/api/Get_all_thongbao_new.php")
     Call<ListNotificationResponeDTO> getNotification();
 
-    @GET("/api/Get_all_thongbao_new.php")
-    Call<ListThongbaoResponeDTO> getThongBao();
-
 }

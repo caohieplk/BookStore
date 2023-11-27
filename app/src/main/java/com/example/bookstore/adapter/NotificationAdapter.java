@@ -1,23 +1,19 @@
 package com.example.bookstore.adapter;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
 import com.example.bookstore.R;
 import com.example.bookstore.dto.NotificationResponeDTO;
-import com.example.bookstore.dto.ThongbaoResponseDTO;
-import com.example.bookstore.model.Notification;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class NotificationAdapter extends
         RecyclerView.Adapter<NotificationAdapter.ViewHolder> {
