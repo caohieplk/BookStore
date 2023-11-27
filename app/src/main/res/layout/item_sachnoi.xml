@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="730dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_width="140dp"
+                android:layout_height="250dp"
+                android:orientation="vertical"
+                android:layout_marginStart="40dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:layout_height="180dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginStart="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgSach"
+                        android:layout_width="130dp"
+                        android:layout_height="190dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/img1"
+
+                        />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txtSach"
+                    android:layout_width="110dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="12dp"
+                    android:textColor="#000000"
+                    android:text="Tôi Thấy Hoa Vàng Trên Cỏ Xanh"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="160dp"
+                android:layout_height="220dp"
+                android:orientation="vertical"
+                android:layout_marginStart="40dp">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="120dp"
+                    android:layout_height="180dp"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginStart="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgdlcatkct"
+                        android:layout_width="130dp"
+                        android:layout_height="190dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/img2"
+
+                        />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txtdlcatkct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:textColor="#000000"
+                    android:text="Nếu Biết Trăm Năm Là Hữu Hạn"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+</ScrollView>
