@@ -146,7 +146,7 @@
                             android:ellipsize="end"
                             android:gravity="center"
                             android:singleLine="true"
-                            android:text="Sách truyện"
+                            android:text="Sách kinh dị"
                             android:textSize="13sp" />
 
                     </LinearLayout>
@@ -200,7 +200,7 @@
                             android:ellipsize="end"
                             android:gravity="center"
                             android:singleLine="true"
-                            android:text="Truyện Tranh"
+                            android:text=" Sách hành động"
                             android:textSize="13sp" />
 
                     </LinearLayout>
@@ -316,7 +316,7 @@
                             android:ellipsize="end"
                             android:gravity="center"
                             android:singleLine="true"
-                            android:text="Hộp thư"
+                            android:text="Sách nấu ăn "
                             android:textSize="13sp" />
 
                     </LinearLayout>

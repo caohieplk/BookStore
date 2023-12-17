@@ -9,7 +9,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class HttpRequest {
 
-    private static final String url = "http://192.168.1.171:1111/";
+    private static final String url = "http://192.168.1.10:1111/";
     private static Retrofit build(){
         Gson gson = new GsonBuilder().setLenient().create();
         return new Retrofit.Builder()
