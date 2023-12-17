@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BookStore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="book_price_format">%s ₫</string>
+    <string name="txt_there_are_no_items_to_show">Không tìm thấy kết quả</string>
+    <string name="price_format_quantity">%d x %s ₫</string>
+    <string name="price_format_plus">+ %s ₫</string>
+    <string name="price_format_total">= %s ₫</string>
+    <string name="bank_name_format">Ngân hàng %s</string>
+    <string name="payment">Thanh toán thành công</string>
+    <string name="please_enter_bank_info">Vui lòng nhập đủ các trường bắt buộc trước khi thanh toán</string>
+    <string name="buy_book">Mua Sách</string>
+    <string name="bought_book">Đã Mua</string>
+    <string name="default_web_client_id">107015302644-t9im8fijbu33p45gm15crukc9prcpk1e.apps.googleusercontent.com</string>
+</resources>
