@@ -54,16 +54,6 @@ public class LibraryFragment extends Fragment {
     }
 
     private void initControl() {
-        binding.toolbar.imgBack.setOnClickListener(view2 -> back());
-
-        //override back button in navigation bar
-        final OnBackPressedCallback callback = new OnBackPressedCallback(true) {
-            @Override
-            public void handleOnBackPressed() {
-                back();
-            }
-        };
-        requireActivity().getOnBackPressedDispatcher().addCallback(requireActivity(), callback);
     }
 
     private void initData() {
@@ -73,6 +63,8 @@ public class LibraryFragment extends Fragment {
 
     @SuppressLint("SetTextI18n")
     private void initView() {
+        //hide icon back
+        binding.toolbar.imgBack.setVisibility(View.GONE);
         binding.toolbar.tvTitle.setText("Thư Viện Của Bạn");
         setupLibraryViewPager();
         setTab();
