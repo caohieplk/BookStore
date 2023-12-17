@@ -128,7 +128,7 @@ public interface IHttpRequest {
     @GET("/api/logout.php")
     Call<LogoutResponse> logout();
 
-    @GET("/api/Get_all_notification.php")
+    @GET("/api/get_list_notification.php")
     Call<ListNotificationResponeDTO> getNotification();
 
 }
